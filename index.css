@@ -1,0 +1,29 @@
+#list-container{
+	display: inline-block;
+	float: left;
+	width: 500px;
+}
+
+#details{
+	display: inline-block;
+	float: right;
+	width: 500px;
+}
+
+.box {
+	list-style: none;
+	padding-left: 0;
+	display: block;
+	width: 400px;
+}
+
+.box > li{
+	border: 2px solid grey;
+  border-radius: 5px;
+	padding: 4px;
+	margin:0 0 3px 0
+}
+
+textarea{
+	width: 408px;
+}
