@@ -5,9 +5,9 @@ class BooksController < ApplicationController
     render json: @books
   end
 
-  def custom_update(book_params)
+  def update
     @book = Book.find_by(isbn: book_params[:isbn])
-    @review = Review.new(content: book_params[:review])
+    @review = Review.new(content: params[:content])
     @book.reviews << @review
     if @book.save
       render json: @book
@@ -19,6 +19,6 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:isbn, :review)
+    params.require(:book).permit(:isbn, :content)
   end
 end

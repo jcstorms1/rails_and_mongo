@@ -48,15 +48,14 @@ document.addEventListener("DOMContentLoaded", function (){
           submitLi.innerText = input.value
           revUl.append(submitLi)
 
-          fetch('http://localhost:3000/book/' + book._id.$oid, {
-            method: 'patch',
+          fetch('http://localhost:3000/books/' + book._id.$oid, {
+            method: 'put',
             headers: {
-							'Content-Type': "application/json",
-							'Accept': "application/json"},
-            body: JSON.stringify( {isbn: book.isbn, content: input.value} )
+							'Content-Type': "application/json"},
+            body: JSON.stringify( { isbn: book.isbn, content: input.value } )
           })
           .then(res => res.json())
-          .then(console.log)
+        
 
           input.value= ""
         })
